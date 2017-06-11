@@ -7,10 +7,14 @@ public/
 .deploy_git/
 /node_modules/*
 !/node_modules/hexo-generator-index/lib/generator.js
+!/themes/
 /themes/*
+!/themes/tranquilpeak/
+/themes/tranquilpeak/*
 !/themes/tranquilpeak/languages/
 !/themes/tranquilpeak/layout/
 !/themes/tranquilpeak/source/
 !/themes/tranquilpeak/_config.yml
 !/themes/tranquilpeak/package.json
 !/themes/tranquilpeak/README.md
+
