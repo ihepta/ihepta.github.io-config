@@ -1,2 +1,2 @@
 # ihepta.github.io-config
-include config and source files of ihepta.github.io
+include personal config and source files of ihepta.github.io
