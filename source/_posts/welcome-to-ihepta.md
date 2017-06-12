@@ -22,7 +22,7 @@ Hi,I'm Allen. One of the front-end developers in China. :)
 *ihepta* is my homepage, it's used to record knowledge and some real enjoyable things from my life. I don't know how much I will harvest in the future, I shall mark this place lots and lots of cool memories.
 
 ## Migration
-From now on I will migrate all my posts from other site to this place.
+From now on I will migrate all my posts from other sites to this place.
 
 ## Stay In Touch
 If you have nice ideas or suggestions about this site, [mail me](mailto:609887115@qq.com) anytime.
