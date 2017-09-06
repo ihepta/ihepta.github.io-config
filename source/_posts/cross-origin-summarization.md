@@ -110,6 +110,77 @@ window.onmessage = function(e){
 </script>
 ```
 
+### 利用iframe实现跨域
+假如www.domainA.com/a.html下有个iframe标签，src指向www.domainB.com/b.html,因为a.html和b.html不在同一个域，所以a.html无法直接调用b.html页面的方法，此时可以在调用方法的时候动态创建一个和b.html在同一个域的页面executB.html，利用executB.html加载的时候执行executB.html页面的方法来间接调用b.html的方法。举个栗子：
+```
+http://localhost:8081/a.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A</title>
+</head>
+<body>
+    <button onclick="executB();">执行B页面方法</button>
+    <iframe name="biframe" src="http://localhost:8082/b.html"></iframe>
+</body>
+<script>
+    function main(){
+        alert('msg from A');
+    }
+
+    var executobj;
+    function executB(){
+        if(typeof executobj == 'undefined'){
+            executobj = document.createElement('iframe');
+            executobj.src = 'http://localhost:8082/executB.html';
+            executobj.style.display = 'none';
+            document.body.appendChild(executobj);
+        }else{
+            executobj.src = 'http://localhost:8082/executB.html?'+Math.random();
+        }
+    }
+</script>
+</html>
+```
+```
+http://localhost:8082/b.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+</body>
+<script>
+    function main(){
+        alert('msg from B');
+    }
+</script>
+</html>
+```
+```
+http://localhost:8082/executB.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>executB</title>
+</head>
+<body>
+</body>
+<script>
+    parent.window.biframe.main();
+</script>
+</html>
+```
+
 ## nginx反向代理实现跨域
 这种方法不需要目标服务器的配合，只需要搭建一台中转nginx服务器，用于转发请求。由页面请求一个本域的地址，转由nginx代理处理之后转发获取请求结果返回给页面。
 ![nginx反向代理示意图](nginx.jpg)
