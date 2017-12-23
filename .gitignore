@@ -11,3 +11,4 @@ public/
 !/node_modules/hexo-generator-index/lib/
 /node_modules/hexo-generator-index/lib/*
 !/node_modules/hexo-generator-index/lib/generator.js
+/themes/tranquilpeak/node_modules/
