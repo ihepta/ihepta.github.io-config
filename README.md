@@ -24,7 +24,7 @@ include personal config and source files of ihepta.github.io
 
    8. Run `bower install` to install [Bower dependencies](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#bower-dependencies)
 
-   9. Modify `/themes/tranquilpeak/source/_css/utils/_variables.scss` 中218行
+   9. Modify `/themes/tranquilpeak/source/_css/utils/_variables.scss`  row 218
 
       `$main-content: {`
 
@@ -32,7 +32,7 @@ include personal config and source files of ihepta.github.io
 
       ​     ` 'padding-right-left': 20px`
 
-      `}`将`750px`改成`80%`
+      `}` from `750px` to `80%`
 
    10. Biography and job is editable in each languages files in `/themes/tranquilpeak/languages` folder
 
